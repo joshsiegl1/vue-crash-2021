@@ -1,10 +1,12 @@
 <template>
   <AddTask v-show="showAddTask" @add-task="addTask" />
+  <div id="list">
   <Tasks
     @toggle-reminder="toggleReminder"
     @delete-task="deleteTask"
     :tasks="tasks"
   />
+  </div> 
 </template>
 
 <script>
@@ -84,3 +86,10 @@
         }
     }
 </script> 
+
+<style scoped>
+    #list { 
+        overflow-y: auto;
+        height: 400px; 
+    }
+</style> 
